@@ -32,6 +32,8 @@
    - Mở Serial Monitor với baud rate 115200 để xem thời gian thực.
 
 ![ESP32-CAM Setup](link-to-your-image)
+![434845888_735890945296436_2923035924733321724_n](https://github.com/Tdha2605/Embedded-System/assets/109448448/0964cd01-b5c2-44f5-8060-a408da88a407)
+
 
 [Link video hướng dẫn sử dụng](https://www.youtube.com/watch?v=your-video-link)
 

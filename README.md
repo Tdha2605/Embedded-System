@@ -11,8 +11,8 @@
 
 1. **Kết nối phần cứng:**
    - Kết nối module DS1307 RTC với ESP32-CAM:
-     - SDA -> GPIO 16
-     - SCL -> GPIO 0
+     - SDA -> GPIO 3
+     - SCL -> GPIO 1
    - Kết nối thẻ SD với ESP32-CAM:
      - CLK -> GPIO 14
      - CMD -> GPIO 15
@@ -20,6 +20,23 @@
      - D1 -> GPIO 4
      - D2 -> GPIO 12
      - D3 -> GPIO 13
+   - Kết nối camera với ESP32-CAM
+     -  PWDN_GPIO_NUM     32
+     -  RESET_GPIO_NUM    -1
+     -  XCLK_GPIO_NUM      0
+     -  IOD_GPIO_NUM     26
+     -  SIOC_GPIO_NUM     27
+     -  Y9_GPIO_NUM       35
+     -  Y8_GPIO_NUM       34
+     -  Y7_GPIO_NUM       39
+     -  Y6_GPIO_NUM       36
+     -  Y5_GPIO_NUM       21
+     -  Y4_GPIO_NUM       19
+     -  Y3_GPIO_NUM       18
+     -  Y2_GPIO_NUM        5
+     -  SYNC_GPIO_NUM    25
+     -  HREF_GPIO_NUM     23
+     -  PCLK_GPIO_NUM     22
 
 2. **Upload chương trình:**
    - Kết nối ESP32-CAM với máy tính qua cổng USB.
@@ -51,39 +68,20 @@
 
 ## E. Thiết kế phần mềm - Software Concept
 
-- Trạng thái của nút chụp ảnh được xác định thông qua cơ chế ngắt ở GPIO.
-- Thời gian hiện tại từ DS1307 RTC được lấy và gắn vào tên file ảnh.
-- LED được bật khi bắt đầu chụp ảnh và tắt khi quá trình chụp hoàn tất.
-- Ảnh được lưu vào thẻ SD với tên file bao gồm timestamp.
+### Trạng thái của nút chụp ảnh được xác định thông qua cơ chế ngắt ở GPIO.
+- Mô tả
 
-```cpp
-#define SDA_PIN 16  // GPIO 16 for SDA
-#define SCL_PIN 0   // GPIO 0 for SCL
 
-void setup() {
-  Serial.begin(115200);
-  Wire.begin(SDA_PIN, SCL_PIN);
-  rtc.begin();
-  if (!rtc.isrunning()) {
-    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
-  }
-}
+### Thời gian hiện tại từ DS1307 RTC được lấy và gắn vào tên file ảnh.
+    ```cpp
 
-void loop() {
-  DateTime now = rtc.now();
-  Serial.print(now.year(), DEC);
-  Serial.print('/');
-  Serial.print(now.month(), DEC);
-  Serial.print('/');
-  Serial.print(now.day(), DEC);
-  Serial.print(" ");
-  Serial.print(now.hour(), DEC);
-  Serial.print(':');
-  Serial.print(now.minute(), DEC);
-  Serial.print(':');
-  Serial.print(now.second(), DEC);
-  Serial.print("\n");
-  delay(1000);
-}
+### LED được bật khi bắt đầu chụp ảnh và tắt khi quá trình chụp hoàn tất.
+   - Mô tả
+    ```cpp
+
+### Ảnh được lưu vào thẻ SD với tên file bao gồm timestamp.
+    ```cpp
+
+    
 
 ## F. Cảm ơn

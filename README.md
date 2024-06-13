@@ -5,7 +5,7 @@
 - Chụp ảnh và lưu trữ vào thẻ SD
 - Sử dụng module DS1307 RTC để gắn timestamp vào ảnh
 - Điều khiển LED bật khi chụp ảnh
-- Hiển thị thời gian thực qua Serial Monitor
+- Nhấn reset để chụp ngay lập tức
 
 ## B. Hướng dẫn sử dụng
 
@@ -39,10 +39,9 @@
 
 | Tên linh kiện         | Số lượng | Link mua hàng                                        |
 |-----------------------|----------|-----------------------------------------------------|
-| ESP32-CAM             | 1        | [Link mua hàng](https://www.example.com/esp32-cam)  |
-| DS1307 RTC Module     | 1        | [Link mua hàng](https://www.example.com/ds1307)     |
-| Thẻ SD                | 1        | [Link mua hàng](https://www.example.com/sd-card)    |
-| Dây nối               | 10       | [Link mua hàng](https://www.example.com/jumper-wires) |
+| ESP32-CAM             | 1        | [Link mua hàng](https://bit.ly/ESP32-CAMMB)  |
+| DS1307 RTC Module     | 1        | [Link mua hàng](https://nshopvn.com/product/module-thoi-gian-thuc-rtc-ds1307/)     |
+| Dây nối               | 10       | [Link mua hàng](https://bit.ly/Daynoi) |
 
 ## D. Sơ đồ nguyên lý - Hardware Schematic
 

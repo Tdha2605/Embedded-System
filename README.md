@@ -85,3 +85,5 @@ void loop() {
   Serial.print("\n");
   delay(1000);
 }
+
+## F. Cảm ơn

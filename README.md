@@ -69,19 +69,15 @@
 ## E. Thiết kế phần mềm - Software Concept
 
 ### Trạng thái của nút chụp ảnh được xác định thông qua cơ chế ngắt ở GPIO.
-- Mô tả
+     ```cpp
 
 
 ### Thời gian hiện tại từ DS1307 RTC được lấy và gắn vào tên file ảnh.
     ```cpp
 
 ### LED được bật khi bắt đầu chụp ảnh và tắt khi quá trình chụp hoàn tất.
-   - Mô tả
     ```cpp
 
 ### Ảnh được lưu vào thẻ SD với tên file bao gồm timestamp.
     ```cpp
-
-    
-
 ## F. Cảm ơn

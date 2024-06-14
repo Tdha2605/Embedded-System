@@ -21,7 +21,7 @@
      - D1 -> GPIO 4
      - D2 -> GPIO 12
      - D3 -> GPIO 13
-   - Kết nối camera với ESP32-CAM
+   - Kết nối camera với ESP32-CAM:
      -  PWDN_GPIO_NUM     32
      -  RESET_GPIO_NUM    -1
      -  XCLK_GPIO_NUM      0
@@ -75,7 +75,7 @@
    - Cài đặt hàm chụp ảnh vào trong setup(), khi nhấn reset hệ thống sẽ chụp ảnh một lần và cập nhật lại timestamp để lấy cho những lần chụp định kỳ tiếp theo
 
 
-### Thời gian hiện tại từ DS1307 RTC được lấy và gắn vào tên file ảnh.
+### Thời gian hiện tại từ DS1307 RTC được lấy qua I2C (SDA = GPIO3, SCL = GPIO1) và gắn vào tên file ảnh.
     ```cpp
     String getPictureFilename() {
     DateTime now = rtc.now();
@@ -86,12 +86,6 @@
     String filename = "/picture_" + String(timeString) + ".jpg";
     return filename;
     }
-
-### LED được bật khi bắt đầu chụp ảnh và tắt khi quá trình chụp hoàn tất.
-     ```cpp
-    pinMode(4, OUTPUT);
-    digitalWrite(4, LOW);
-    rtc_gpio_hold_en(GPIO_NUM_4);
 
 ### Ảnh được lưu vào thẻ SD với tên file bao gồm timestamp.
     ```cpp
@@ -126,10 +120,12 @@
     }
 ### Chụp ảnh 30 giây một lần
      ```cpp
+     void loop() 
+     {
+     takeSavePhoto(); // Chụp và lưu ảnh
+     delay(30000); // Đợi 30 giây trước khi chụp ảnh tiếp theo
+     }
      
-
-
-    
 ## F. Tác giả
 ### Thành viên trong nhóm
    Trần Đức Hoàng Anh - Link github:

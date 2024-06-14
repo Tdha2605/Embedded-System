@@ -41,6 +41,7 @@
 2. **Upload chương trình:**
    - Kết nối ESP32-CAM với máy tính qua cổng USB.
    - Mở Arduino IDE hoặc PlatformIO.
+   - Cài đặt thư viện RTCLib
    - Cài đặt board ESP32 và chọn đúng cổng COM.
    - Upload chương trình lên ESP32-CAM.
 
@@ -64,7 +65,8 @@
 
 ## D. Sơ đồ nguyên lý - Hardware Schematic
 
-![Hardware Schematic](link-to-your-schematic-image)
+![image](https://github.com/Tdha2605/Embedded-System/assets/109448448/fc867ed4-004f-4887-8865-d69f4ed06a67)
+
 
 ## E. Thiết kế phần mềm - Software Concept
 
@@ -129,7 +131,11 @@
     
 ## F. Tác giả
 ### Thành viên trong nhóm
-### Lời cảm ơn các tác giả
+   Trần Đức Hoàng Anh - Link github:
+   Nguyễn Văn Minh - Link github:
+   Mai Thế Tuấn - Link github: 
+   Trịnh Hà Trung - Link github: https://github.com/Trunng5703
+### Lời cảm ơn đến: 
     - https://randomnerdtutorials.com/esp32-cam-take-photo-save-microsd-card/
     - https://www.instructables.com/ESP32-CAM-Take-Photo-and-Save-to-MicroSD-Card-With/
     

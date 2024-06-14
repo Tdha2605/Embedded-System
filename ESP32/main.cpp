@@ -26,8 +26,8 @@
 #define PCLK_GPIO_NUM     22
 
 // I2C pins for DS1307
-#define SDA_PIN 14
-#define SCL_PIN 15
+#define SDA_PIN 3
+#define SCL_PIN 1
 
 // LED pin
 #define LED_PIN 4
@@ -110,8 +110,6 @@ void initMicroSDCard() {
 
 // Take photo and save to microSD card
 void takeSavePhoto() {
-  // Turn on the LED
-  digitalWrite(LED_PIN, HIGH);
 
   // Take Picture with Camera
   camera_fb_t * fb = esp_camera_fb_get();
@@ -172,8 +170,6 @@ void setup() {
   initMicroSDCard();
 
   // Initialize LED pin
-  pinMode(LED_PIN, OUTPUT);
-  digitalWrite(LED_PIN, LOW); // Ensure LED is off initially
 }
 
 void loop() {

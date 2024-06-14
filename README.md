@@ -94,33 +94,33 @@
     ```cpp
     void takeSavePhoto() {
 
-  // Take Picture with Camera
-  camera_fb_t * fb = esp_camera_fb_get();
-  if (!fb) {
+    // Take Picture with Camera
+    camera_fb_t * fb = esp_camera_fb_get();
+    if (!fb) {
     Serial.println("Camera capture failed");
     delay(1000);
     ESP.restart();
-  }
+    }
 
-  // Path where new picture will be saved in SD Card
-  String path = getPictureFilename();
-  Serial.printf("Picture file name: %s\n", path.c_str());
+    // Path where new picture will be saved in SD Card
+    String path = getPictureFilename();
+    Serial.printf("Picture file name: %s\n", path.c_str());
 
-  // Save picture to microSD card
-  fs::FS &fs = SD_MMC;
-  File file = fs.open(path.c_str(), FILE_WRITE);
-  if (!file) {
+    // Save picture to microSD card
+    fs::FS &fs = SD_MMC;
+    File file = fs.open(path.c_str(), FILE_WRITE);
+    if (!file) {
     Serial.printf("Failed to open file in writing mode");
-  } else {
+    } else {
     file.write(fb->buf, fb->len); // payload (image), payload length
     Serial.printf("Saved: %s\n", path.c_str());
-  }
-  file.close();
-  esp_camera_fb_return(fb);
+    }
+    file.close();
+    esp_camera_fb_return(fb);
 
-  // Turn off the LED
-  digitalWrite(LED_PIN, LOW);
-}
+    // Turn off the LED
+    digitalWrite(LED_PIN, LOW);
+    }
 
 
     

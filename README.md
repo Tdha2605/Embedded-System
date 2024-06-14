@@ -127,4 +127,9 @@
 
 
     
-## F. Cảm ơn
+## F. Tác giả
+### Thành viên trong nhóm
+### Lời cảm ơn các tác giả
+    - https://randomnerdtutorials.com/esp32-cam-take-photo-save-microsd-card/
+    - https://www.instructables.com/ESP32-CAM-Take-Photo-and-Save-to-MicroSD-Card-With/
+    

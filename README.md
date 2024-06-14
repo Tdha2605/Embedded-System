@@ -76,7 +76,7 @@
 
 
 ### Thời gian hiện tại từ DS1307 RTC được lấy qua I2C (SDA = GPIO3, SCL = GPIO1) và gắn vào tên file ảnh.
-    ```cpp
+     ```cpp
     String getPictureFilename() {
     DateTime now = rtc.now();
     char timeString[20];
@@ -88,7 +88,8 @@
     }
 
 ### Ảnh được lưu vào thẻ SD với tên file bao gồm timestamp.
-    ```cpp
+   - Khởi tạo thẻ SD: Trước khi đọc hoặc ghi, thẻ SD cần được khởi tạo. Quá trình khởi tạo bao gồm việc kiểm tra và xác định loại thẻ SD, sau đó thiết lập giao tiếp SPI với thẻ.
+     ```cpp
     void takeSavePhoto() {
 
     // Take Picture with Camera
@@ -119,7 +120,7 @@
     digitalWrite(LED_PIN, LOW);
     }
 ### Chụp ảnh 30 giây một lần
-     ```cpp
+      ```cpp
      void loop() 
      {
      takeSavePhoto(); // Chụp và lưu ảnh

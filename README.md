@@ -128,10 +128,10 @@
      
 ## F. Tác giả
 ### Thành viên trong nhóm
-   Trần Đức Hoàng Anh - Link github:
-   Nguyễn Văn Minh - Link github:
-   Mai Thế Tuấn - Link github: 
-   Trịnh Hà Trung - Link github: https://github.com/Trunng5703
+   - Trần Đức Hoàng Anh - Link github:
+   - Nguyễn Văn Minh - Link github:
+   - Mai Thế Tuấn - Link github: 
+   - Trịnh Hà Trung - Link github: https://github.com/Trunng5703
 ### Lời cảm ơn đến: 
     - https://randomnerdtutorials.com/esp32-cam-take-photo-save-microsd-card/
     - https://www.instructables.com/ESP32-CAM-Take-Photo-and-Save-to-MicroSD-Card-With/

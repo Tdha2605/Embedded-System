@@ -90,6 +90,21 @@
 ### Ảnh được lưu vào thẻ SD với tên file bao gồm timestamp.
    - Khởi tạo thẻ SD: Trước khi đọc hoặc ghi, thẻ SD cần được khởi tạo. Quá trình khởi tạo bao gồm việc kiểm tra và xác định loại thẻ SD, sau đó thiết lập giao tiếp SPI với thẻ.
      ```cpp
+     void initMicroSDCard() {
+     Serial.println("Starting SD Card");
+    if (!SD_MMC.begin()) {
+    Serial.println("SD Card Mount Failed");
+    return;
+    }
+    delay(1000); // Đảm bảo thẻ SD được khởi động đúng cách
+    uint8_t cardType = SD_MMC.cardType();
+    if (cardType == CARD_NONE) {
+    Serial.println("No SD Card attached");
+    return;
+    }
+    Serial.println("SD Card initialized successfully.");
+    }
+
     void takeSavePhoto() {
 
     // Take Picture with Camera

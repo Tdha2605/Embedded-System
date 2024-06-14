@@ -85,7 +85,7 @@
     }
 
 ### LED được bật khi bắt đầu chụp ảnh và tắt khi quá trình chụp hoàn tất.
-    
+     ```cpp
     pinMode(4, OUTPUT);
     digitalWrite(4, LOW);
     rtc_gpio_hold_en(GPIO_NUM_4);
@@ -121,6 +121,9 @@
     // Turn off the LED
     digitalWrite(LED_PIN, LOW);
     }
+### Chụp ảnh 30 giây một lần
+     ```cpp
+     
 
 
     

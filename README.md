@@ -48,11 +48,11 @@
    - Sau khi upload chương trình, ESP32-CAM sẽ bắt đầu chụp ảnh và lưu vào thẻ SD với timestamp từ DS1307.
    - Mở Serial Monitor với baud rate 115200 để xem thời gian thực.
 
-![ESP32-CAM Setup](link-to-your-image)
-![434845888_735890945296436_2923035924733321724_n](https://github.com/Tdha2605/Embedded-System/assets/109448448/0964cd01-b5c2-44f5-8060-a408da88a407)
+![image](https://github.com/Tdha2605/Embedded-System/assets/109448448/d8f4a7ad-63a7-4424-8785-bf738f323330)
 
 
-[Link video hướng dẫn sử dụng](https://www.youtube.com/watch?v=your-video-link)
+
+[Link video demo](https://www.youtube.com/watch?v=your-video-link)
 
 ## C. Danh sách linh kiện (Bill of Material)
 

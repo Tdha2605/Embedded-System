@@ -74,6 +74,15 @@
 
 ### Thời gian hiện tại từ DS1307 RTC được lấy và gắn vào tên file ảnh.
     ```cpp
+    String getPictureFilename() {
+    DateTime now = rtc.now();
+    char timeString[20];
+    snprintf(timeString, sizeof(timeString), "%04d-%02d-%02d_%02d-%02d-%02d",
+           now.year(), now.month(), now.day(), now.hour(), now.minute(), now.second());
+    Serial.println(timeString);
+    String filename = "/picture_" + String(timeString) + ".jpg";
+    return filename;
+    }
 
 ### LED được bật khi bắt đầu chụp ảnh và tắt khi quá trình chụp hoàn tất.
     ```cpp

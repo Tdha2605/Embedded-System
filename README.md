@@ -6,6 +6,7 @@
 - Sử dụng module DS1307 RTC để gắn timestamp vào ảnh
 - Điều khiển LED bật khi chụp ảnh
 - Nhấn reset để chụp ngay lập tức
+- ![image](https://github.com/Tdha2605/Embedded-System/assets/109448448/fc867ed4-004f-4887-8865-d69f4ed06a67)
 
 ## B. Hướng dẫn sử dụng
 
@@ -65,7 +66,10 @@
 
 ## D. Sơ đồ nguyên lý - Hardware Schematic
 
-![image](https://github.com/Tdha2605/Embedded-System/assets/109448448/fc867ed4-004f-4887-8865-d69f4ed06a67)
+![image](https://github.com/Tdha2605/Embedded-System/assets/109448448/d8f4a7ad-63a7-4424-8785-bf738f323330)
+![image](https://github.com/Tdha2605/Embedded-System/assets/109448448/9c082ea2-ff8d-455e-b207-d14637998ac7)
+![image](https://github.com/Tdha2605/Embedded-System/assets/109448448/e8610968-4f38-4059-bdd4-ac5f40534a51)
+
 
 
 ## E. Thiết kế phần mềm - Software Concept

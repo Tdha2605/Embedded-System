@@ -76,6 +76,7 @@
 
 
 ### Thời gian hiện tại từ DS1307 RTC được lấy qua I2C (SDA = GPIO3, SCL = GPIO1) và gắn vào tên file ảnh.
+   - Something
      ```cpp
     String getPictureFilename() {
     DateTime now = rtc.now();
@@ -104,10 +105,13 @@
     }
     Serial.println("SD Card initialized successfully.");
     }
-
+  - Hệ thống sẽ chụp ảnh và lưu vào thẻ SD với tên file bao gồm timestamp. Trước khi lưu, hệ thống sẽ kiểm tra nếu file mở thành công để ghi dữ liệu.
+    ```cpp
     void takeSavePhoto() {
+    // Bật LED
+    digitalWrite(LED_PIN, HIGH);
 
-    // Take Picture with Camera
+    // Chụp ảnh bằng camera
     camera_fb_t * fb = esp_camera_fb_get();
     if (!fb) {
     Serial.println("Camera capture failed");
@@ -115,11 +119,11 @@
     ESP.restart();
     }
 
-    // Path where new picture will be saved in SD Card
+    // Đường dẫn nơi lưu ảnh trên thẻ SD
     String path = getPictureFilename();
     Serial.printf("Picture file name: %s\n", path.c_str());
 
-    // Save picture to microSD card
+    // Lưu ảnh vào thẻ SD
     fs::FS &fs = SD_MMC;
     File file = fs.open(path.c_str(), FILE_WRITE);
     if (!file) {
@@ -131,15 +135,17 @@
     file.close();
     esp_camera_fb_return(fb);
 
-    // Turn off the LED
+    // Tắt LED
     digitalWrite(LED_PIN, LOW);
     }
+
 ### Chụp ảnh 30 giây một lần
+   - Đợi 30 giây trước khi chụp ảnh tiếp theo
       ```cpp
      void loop() 
      {
-     takeSavePhoto(); // Chụp và lưu ảnh
-     delay(30000); // Đợi 30 giây trước khi chụp ảnh tiếp theo
+     takeSavePhoto(); 
+     delay(30000); 
      }
      
 ## F. Tác giả

@@ -50,9 +50,6 @@
    - Sau khi upload chương trình, ESP32-CAM sẽ bắt đầu chụp ảnh và lưu vào thẻ SD với timestamp từ DS1307.
    - Mở Serial Monitor với baud rate 115200 để xem thời gian thực.
 
-![image](https://github.com/Tdha2605/Embedded-System/assets/109448448/d8f4a7ad-63a7-4424-8785-bf738f323330)
-
-
 
 [Link video demo](https://www.youtube.com/watch?v=your-video-link)
 
@@ -74,8 +71,8 @@
 
 ## E. Thiết kế phần mềm - Software Concept
 
-### Trạng thái của nút chụp ảnh được xác định thông qua cơ chế ngắt ở GPIO.
-     ```cpp
+### Trạng thái của nút chụp ảnh được xác định thông qua nút reset GPIO 13
+   - Cài đặt hàm chụp ảnh vào trong setup(), khi nhấn reset hệ thống sẽ chụp ảnh một lần và cập nhật lại timestamp để lấy cho những lần chụp định kỳ tiếp theo
 
 
 ### Thời gian hiện tại từ DS1307 RTC được lấy và gắn vào tên file ảnh.

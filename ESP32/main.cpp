@@ -31,6 +31,7 @@
 
 // LED pin
 #define LED_PIN 4
+#define BUTTON_PIN 16
 
 // RTC instance
 RTC_DS1307 rtc;
@@ -139,6 +140,10 @@ void takeSavePhoto() {
   digitalWrite(LED_PIN, LOW);
 }
 
+void IRAM_ATTR onButtonPress() {
+  takeSavePhoto(); // Function to be called on button press
+}
+
 void setup() {
   WRITE_PERI_REG(RTC_CNTL_BROWN_OUT_REG, 0); // disable brownout detector
 
@@ -169,11 +174,12 @@ void setup() {
   Serial.print("Initializing the MicroSD card module... ");
   initMicroSDCard();
 
-  // Initialize LED pin
+   //pinMode(BUTTON_PIN, INPUT_PULLUP); // Initialize button pin with internal pull-up
+  // attachInterrupt(digitalPinToInterrupt(BUTTON_PIN), onButtonPress, FALLING); // Attach interrupt
 }
 
 void loop() {
   // Take and Save Photo
   takeSavePhoto();
-  delay(10000);
+  delay(20000);
 }

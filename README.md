@@ -6,7 +6,8 @@
 - Sử dụng module DS1307 RTC để gắn timestamp vào ảnh
 - Điều khiển LED bật khi chụp ảnh
 - Nhấn reset để chụp ngay lập tức
-- ![image](https://github.com/Tdha2605/Embedded-System/assets/109448448/fc867ed4-004f-4887-8865-d69f4ed06a67)
+- ![image](https://github.com/Tdha2605/Embedded-System/assets/109448448/eb5d4aa1-0d50-4669-b99d-4fc4e0f80c92)
+
 
 ## B. Hướng dẫn sử dụng
 
@@ -70,6 +71,7 @@
 
 
 ## E. Thiết kế phần mềm - Software Concept
+- ![image](https://github.com/Tdha2605/Embedded-System/assets/109448448/fc867ed4-004f-4887-8865-d69f4ed06a67)
 
 ### Trạng thái của nút chụp ảnh được xác định thông qua nút reset GPIO 13
    - Cài đặt hàm chụp ảnh vào trong setup(), khi nhấn reset hệ thống sẽ chụp ảnh một lần và cập nhật lại timestamp để lấy cho những lần chụp định kỳ tiếp theo
@@ -143,11 +145,17 @@
 ### Chụp ảnh 30 giây một lần
    - Đợi 30 giây trước khi chụp ảnh tiếp theo
       ```cpp
-     void loop() 
-     {
-     takeSavePhoto(); 
-     delay(30000); 
-     }
+    void loop()
+    {
+
+    unsigned long currentMillis = millis();
+    if (currentMillis - lastPhotoTime > 10000)
+    {
+    lastPhotoTime = currentMillis;
+    Serial.println("Taking scheduled photo...");
+    takeSavePhoto();
+    }
+    }
      
 ## F. Tác giả
 ### Thành viên trong nhóm

@@ -29,6 +29,9 @@
 #define SDA_PIN 3
 #define SCL_PIN 1
 
+unsigned long lastPhotoTime = 0; 
+volatile bool buttonPressed = false;
+
 // LED pin
 #define LED_PIN 4
 #define BUTTON_PIN 16
@@ -141,7 +144,7 @@ void takeSavePhoto() {
 }
 
 void IRAM_ATTR onButtonPress() {
-  takeSavePhoto(); // Function to be called on button press
+  buttonPressed=true;
 }
 
 void setup() {
@@ -174,12 +177,26 @@ void setup() {
   Serial.print("Initializing the MicroSD card module... ");
   initMicroSDCard();
 
-   //pinMode(BUTTON_PIN, INPUT_PULLUP); // Initialize button pin with internal pull-up
-  // attachInterrupt(digitalPinToInterrupt(BUTTON_PIN), onButtonPress, FALLING); // Attach interrupt
+   pinMode(BUTTON_PIN, INPUT_PULLUP); // Initialize button pin with internal pull-up
+   attachInterrupt(digitalPinToInterrupt(BUTTON_PIN), onButtonPress, FALLING); // Attach interrupt
 }
 
+
 void loop() {
-  // Take and Save Photo
-  takeSavePhoto();
-  delay(20000);
+  // Check if button was pressed
+   if (buttonPressed) {
+    Serial.println("Button pressed, taking photo...");
+    takeSavePhoto();
+    buttonPressed = false; // Reset the flag
+    lastPhotoTime= millis();
+  }
+
+
+  // Check if it's time to take a photo based on interval
+  unsigned long currentMillis = millis();
+  if (currentMillis - lastPhotoTime > 10000) {
+    lastPhotoTime = currentMillis;
+    Serial.println("Taking scheduled photo...");
+    takeSavePhoto();
+  }
 }

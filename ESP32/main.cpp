@@ -148,7 +148,7 @@ void takeSavePhoto()
   }
   else
   {
-    file.write(fb->buf, fb->len); // payload (image), payload length
+    file.write(fb->buf, fb->len); 
     Serial.printf("Saved: %s\n", path.c_str());
   }
   file.close();
@@ -171,7 +171,7 @@ void setup()
   delay(2000);
 
   // Initialize I2C communication for the RTC
-  Wire.begin(SDA_PIN, SCL_PIN); // SDA, SCL
+  Wire.begin(SDA_PIN, SCL_PIN); 
 
   // Initialize RTC
   if (!rtc.begin())

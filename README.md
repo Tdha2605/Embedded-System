@@ -145,17 +145,16 @@
 ### Chụp ảnh 30 giây một lần
    - Đợi 30 giây trước khi chụp ảnh tiếp theo
       ```cpp
-    void loop()
-    {
-
-    unsigned long currentMillis = millis();
-    if (currentMillis - lastPhotoTime > 10000)
-    {
-    lastPhotoTime = currentMillis;
-    Serial.println("Taking scheduled photo...");
-    takeSavePhoto();
-    }
-    }
+      void loop()
+      {
+       unsigned long currentMillis = millis();
+       if (currentMillis - lastPhotoTime > 10000)
+      {
+      lastPhotoTime = currentMillis;
+      Serial.println("Taking scheduled photo...");
+      takeSavePhoto();
+      }
+      }
      
 ## F. Tác giả
 ### Thành viên trong nhóm

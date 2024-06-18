@@ -65,6 +65,7 @@
 ## D. Sơ đồ nguyên lý - Hardware Schematic
 
 ![image](https://github.com/Tdha2605/Embedded-System/assets/109448448/d8f4a7ad-63a7-4424-8785-bf738f323330)
+![image](https://github.com/Tdha2605/Embedded-System/assets/109448448/159a9bcf-ea1e-476a-9ed8-802c25d481a4)
 ![image](https://github.com/Tdha2605/Embedded-System/assets/109448448/9c082ea2-ff8d-455e-b207-d14637998ac7)
 ![image](https://github.com/Tdha2605/Embedded-System/assets/109448448/e8610968-4f38-4059-bdd4-ac5f40534a51)
 
